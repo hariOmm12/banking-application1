@@ -1,0 +1,21 @@
+package com.example.demo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+@Service
+public class NotificationClient {
+
+    @Autowired
+    private RestTemplate restTemplate;
+
+    @Value("${notification.service.url}")
+    private String notificationServiceUrl;
+
+    public void sendTransactionNotification(String email, String subject, String text) {
+        String url = notificationServiceUrl + "/notifications/send?to=" + email + "&subject=" + subject + "&text=" + text;
+        restTemplate.postForObject(url, null, Void.class);
+    }
+}

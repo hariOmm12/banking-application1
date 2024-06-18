@@ -1,0 +1,19 @@
+package com.example.demo.controller;
+
+@RestController
+@RequestMapping("/transactions")
+public class TransactionController {
+
+    @Autowired
+    private TransactionService transactionService;
+
+    @GetMapping("/{accountId}")
+    public ResponseEntity<List<Transaction>> getTransactionHistory(@PathVariable Long accountId) {
+        return ResponseEntity.ok(transactionService.getTransactionHistory(accountId));
+    }
+
+    @PostMapping
+    public ResponseEntity<Transaction> createTransaction(@RequestBody Transaction transaction) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(transactionService.createTransaction(transaction));
+    }
+}
