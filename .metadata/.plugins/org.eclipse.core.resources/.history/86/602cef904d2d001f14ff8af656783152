@@ -1,0 +1,15 @@
+package com.example.demo.controller;
+
+@RestController
+@RequestMapping("/notifications")
+public class NotificationController {
+
+    @Autowired
+    private NotificationService notificationService;
+
+    @PostMapping
+    public ResponseEntity<Void> sendNotification(@RequestBody NotificationDTO notificationDTO) {
+        notificationService.sendNotification(notificationDTO);
+        return ResponseEntity.status(HttpStatus.OK).build();
+    }
+}

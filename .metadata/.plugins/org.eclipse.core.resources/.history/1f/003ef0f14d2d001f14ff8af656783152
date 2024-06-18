@@ -1,0 +1,9 @@
+package com.example.demo.dao;
+
+public class NotificationDTO {
+    private String email;
+    private String type;
+    private Double amount;
+
+    // Constructors, getters, setters
+}
