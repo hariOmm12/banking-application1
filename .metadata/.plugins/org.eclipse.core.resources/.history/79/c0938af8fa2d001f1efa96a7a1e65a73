@@ -37,7 +37,7 @@ public class TransactionService {
          // Send notification
          String subject = "Transaction Notification";
          String text = "A transaction of amount " + transaction.getAmount() + " has been made from your account.";
-         String email = "example.job@gmail.com";
+         String email = "rupallidas.job@gmail.com";
          notificationClient.sendNotification(email, transaction.getAmount());
 
          return transaction1;
