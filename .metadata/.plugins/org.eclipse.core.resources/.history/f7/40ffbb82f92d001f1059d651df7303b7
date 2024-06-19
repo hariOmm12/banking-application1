@@ -7,7 +7,7 @@ spring.mail.password=*********
 spring.mail.properties.mail.smtp.auth=true
 spring.mail.properties.mail.smtp.starttls.enable=true
 spring.mail.properties.mail.smtp.starttls.required=true
-spring.mail.properties.mail.smtp.ssl.trust=smtp.example.com
+spring.mail.properties.mail.smtp.ssl.trust=smtp.gmail.com
 
 eureka.client.serviceUrl.defaultZone=http://localhost:8761/eureka/
 
